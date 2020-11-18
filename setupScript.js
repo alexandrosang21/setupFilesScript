@@ -13,8 +13,12 @@ const htmlDoc = `<html lang="en">
     <script src="app.js"></script>
 </body>
 </html>`;
-
-fs.mkdirSync(`${folderName}`);
-fs.writeFileSync(`${folderName}/index.html`, `${htmlDoc}`);
-fs.writeFileSync(`${folderName}/app.css`, '');
-fs.writeFileSync(`${folderName}/app.js`, '');
+try {
+	fs.mkdirSync(`${folderName}`);
+	fs.writeFileSync(`${folderName}/index.html`, `${htmlDoc}`);
+	fs.writeFileSync(`${folderName}/app.css`, '');
+	fs.writeFileSync(`${folderName}/app.js`, '');
+} catch (e) {
+	console.log('Something is wrong !');
+	console.log('e');
+}
